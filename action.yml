@@ -72,6 +72,10 @@ inputs:
     description: Allowed number of files to display
     required: false
     default: 7
+  workflow:
+    description: Name of workflow or process (won't be included in the card if none)
+    required: false
+    default: null
 
 runs:
   using: node12
