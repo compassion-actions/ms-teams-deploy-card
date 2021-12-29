@@ -91,6 +91,16 @@ export function formatCompleteLayout(
     }
   }
 
+  // Set workflow name
+  const workflow = getInput("workflow");
+  if (workflow !== "") {
+    section.facts.splice(
+      1,
+      0,
+      new Fact("Workflow:", `\`${workflow.toUpperCase()}\``)
+    );
+  }
+
   // Set environment name
   const environment = getInput("environment");
   if (environment !== "") {

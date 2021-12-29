@@ -20,6 +20,12 @@ export function formatCompactLayout(
     labels = `\`${conclusion.toUpperCase()} [${elapsedSeconds}s]\``;
   }
 
+  // Set workflow name
+  const workflow = getInput("workflow");
+  if (workflow !== "") {
+    labels += ` \`WF:${workflow.toUpperCase()}\``;
+  }
+
   // Set environment name
   const environment = getInput("environment");
   if (environment !== "") {
